@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Regex Tester - 免费在线工具</title>
+<title>Regex Tester - 免费Online Tools</title>
 <meta name="description" content="在线正则表达式测试工具 - 实时匹配高亮，支持 JS/Python 语法">
 <style>*{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-height:100vh;display:flex;flex-direction:column}
@@ -24,7 +24,7 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:#58a6ff!import
 <body>
 <header>
   <div class="logo">🛠 <span>Dev</span>Kit<span class="badge">BETA</span></div>
-  <div style="font-size:11px;color:#8b949e">🔒 本地处理 · 数据不上传</div>
+  <div style="font-size:11px;color:#8b949e">🔒 Processed locally · 数据不Upload</div>
 </header>
 <main>
   <h1 style="font-size:24px;margin-bottom:4px">Regex Tester</h1>
@@ -39,8 +39,8 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:#58a6ff!import
       <input id="regex-flags" placeholder="gmi" style="width:40px;padding:10px 4px;font-size:14px;border:none;background:transparent;color:#3fb950;outline:none;font-family:mono">
     </div></div>
   </div>
-  <textarea id="regex-text" placeholder="输入测试文本..." rows="6" style="width:100%;padding:16px;font-size:14px;border:1px solid #30363d;border-radius:8px;background:#0d1117;color:#c9d1d9;resize:vertical;outline:none;font-family:mono;line-height:1.6"></textarea>
-  <div id="regex-result" style="margin-top:12px;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;min-height:100px;font-family:mono;font-size:13px;line-height:1.8;color:#c9d1d9;white-space:pre-wrap;word-break:break-all">输入正则和测试文本查看匹配结果</div>
+  <textarea id="regex-text" placeholder="Input测试文本..." rows="6" style="width:100%;padding:16px;font-size:14px;border:1px solid #30363d;border-radius:8px;background:#0d1117;color:#c9d1d9;resize:vertical;outline:none;font-family:mono;line-height:1.6"></textarea>
+  <div id="regex-result" style="margin-top:12px;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;min-height:100px;font-family:mono;font-size:13px;line-height:1.8;color:#c9d1d9;white-space:pre-wrap;word-break:break-all">Input正则和测试文本查看匹配结果</div>
 </div>
 </main>
 <footer>
@@ -53,7 +53,7 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:#58a6ff!import
   const flags=document.getElementById('regex-flags').value;
   const text=document.getElementById('regex-text').value;
   const res=document.getElementById('regex-result');
-  if(!pattern){res.innerHTML='<span style=color:#8b949e>输入正则表达式</span>';return;}
+  if(!pattern){res.innerHTML='<span style=color:#8b949e>Input正则表达式</span>';return;}
   try{
     const re=new RegExp(pattern,flags);
     const matches=[...text.matchAll(re)];
@@ -69,7 +69,7 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:#58a6ff!import
       html+=`<div style="margin-bottom:4px">[${m.index}] ${m[0].substring(0,100)}${m[0].length>100?'...':''}</div>`;
       if(m.groups){html+='<div style="margin-left:16px;color:#8b949e;font-size:12px">'+JSON.stringify(m.groups)+'</div>';}
     }
-    html+='<div style="margin-top:12px;border-top:1px solid #30363d;padding-top:8px;font-size:12px;color:#8b949e">高亮预览:</div><div style="line-height:2">'+highlighted+'</div>';
+    html+='<div style="margin-top:12px;border-top:1px solid #30363d;padding-top:8px;font-size:12px;color:#8b949e">高亮Preview:</div><div style="line-height:2">'+highlighted+'</div>';
     res.innerHTML=html;
   }catch(e){res.innerHTML='<span style=color:#f85149>❌ '+e.message+'</span>';}
 }
